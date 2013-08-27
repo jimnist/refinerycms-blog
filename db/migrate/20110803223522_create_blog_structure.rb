@@ -40,7 +40,7 @@ class CreateBlogStructure < ActiveRecord::Migration
   end
 
   def down
-    Refinery::UserPlugin.destroy_all({:name => "refinerycms_blog"}) if defined?(Refinery::UserPlugin)
+    Spree::UserPlugin.destroy_all({:name => "refinerycms_blog"}) if defined?(Spree::UserPlugin)
 
     Refinery::Page.delete_all({:link_url => "/blog"}) if defined?(Refinery::Page)
 

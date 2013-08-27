@@ -57,7 +57,7 @@ module Refinery
               end
 
               it "should belong to me" do
-                subject.class.first.author.should eq(::Refinery::User.last)
+                subject.class.first.author.should eq(::Spree::User.last)
               end
 
               it "should save categories" do

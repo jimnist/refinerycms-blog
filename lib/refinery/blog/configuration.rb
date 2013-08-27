@@ -11,8 +11,8 @@ module Refinery
     self.post_teaser_length = 250
     self.share_this_key = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
     self.page_url = "/blog"
-  
-    # Refinery::User isn't available when this line gets hit, so we use static methods instead
+
+    # Spree::User isn't available when this line gets hit, so we use static methods instead
     @@user_class_name = nil
     class << self
       def user_class=(class_name)
@@ -26,7 +26,7 @@ module Refinery
       end
 
       def user_class
-        class_name = @@user_class_name || 'Refinery::User'
+        class_name = @@user_class_name || 'Spree::User'
         begin
           Object.const_get(class_name)
         rescue NameError
